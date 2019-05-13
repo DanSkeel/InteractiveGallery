@@ -13,6 +13,33 @@
 		CF69CC872282E5350058963B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF69CC852282E5350058963B /* Main.storyboard */; };
 		CF69CC892282E5360058963B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF69CC882282E5360058963B /* Assets.xcassets */; };
 		CF69CC8C2282E5360058963B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF69CC8A2282E5360058963B /* LaunchScreen.storyboard */; };
+		CF69CC942282E9FF0058963B /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF69CC932282E9FF0058963B /* AlbumsViewController.swift */; };
+		CF69CC962282EB050058963B /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF69CC952282EB050058963B /* NetworkClient.swift */; };
+		CF69CC992282FFE90058963B /* APIRequestAlbums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF69CC982282FFE90058963B /* APIRequestAlbums.swift */; };
+		CF69CC9B2283004C0058963B /* NetworkRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF69CC9A2283004C0058963B /* NetworkRequestProtocol.swift */; };
+		CF69CC9E2283161E0058963B /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF69CC9D2283161E0058963B /* Album.swift */; };
+		CFAF66D9228421FD0061B89F /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66D8228421FD0061B89F /* PhotosViewController.swift */; };
+		CFAF66DC228436F60061B89F /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66DB228436F60061B89F /* Photo.swift */; };
+		CFAF66DE228437870061B89F /* APIRequestPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66DD228437870061B89F /* APIRequestPhotos.swift */; };
+		CFAF66E12284CD310061B89F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66E02284CD310061B89F /* PhotoCollectionViewCell.swift */; };
+		CFAF66E42285810F0061B89F /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66E32285810F0061B89F /* Collection+Extensions.swift */; };
+		CFAF66EB228763900061B89F /* AbstractOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66EA228763900061B89F /* AbstractOperation.swift */; };
+		CFAF66ED22881F940061B89F /* NSLock+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66EC22881F940061B89F /* NSLock+Operations.swift */; };
+		CFAF66F022882F1D0061B89F /* APPLE_EXAMPLES_LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFAF66EF22882F1D0061B89F /* APPLE_EXAMPLES_LICENSE.txt */; };
+		CFAF66F2228833140061B89F /* URLSessionTaskOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66F1228833140061B89F /* URLSessionTaskOperation.swift */; };
+		CFAF66F422886F060061B89F /* APIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66F322886F060061B89F /* APIProtocol.swift */; };
+		CFAF66F622887A4B0061B89F /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66F522887A4B0061B89F /* APIRequest.swift */; };
+		CFAF66F9228888050061B89F /* JSONResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66F8228888050061B89F /* JSONResponseDecoder.swift */; };
+		CFAF66FE22888A950061B89F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66FD22888A950061B89F /* NetworkError.swift */; };
+		CFAF670022888B760061B89F /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF66FF22888B760061B89F /* Networking.swift */; };
+		CFAF670222888CCB0061B89F /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF670122888CCB0061B89F /* DataRequest.swift */; };
+		CFAF6704228890C90061B89F /* DataResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF6703228890C90061B89F /* DataResponseDecoder.swift */; };
+		CFAF6706228891180061B89F /* ResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF6705228891180061B89F /* ResponseDecoder.swift */; };
+		CFAF670A2289C8A00061B89F /* ViewControllersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF67092289C8A00061B89F /* ViewControllersProvider.swift */; };
+		CFAF670D2289D1690061B89F /* ViewControllersProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF670C2289D1690061B89F /* ViewControllersProviding.swift */; };
+		CFAF67102289DF140061B89F /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF670F2289DF140061B89F /* ImageLoader.swift */; };
+		CFAF67132289DF610061B89F /* ImageLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF67122289DF610061B89F /* ImageLoading.swift */; };
+		CFAF67152289E3D70061B89F /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFAF67142289E3D70061B89F /* PhotoCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +51,33 @@
 		CF69CC882282E5360058963B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF69CC8B2282E5360058963B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF69CC8D2282E5360058963B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF69CC932282E9FF0058963B /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		CF69CC952282EB050058963B /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		CF69CC982282FFE90058963B /* APIRequestAlbums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestAlbums.swift; sourceTree = "<group>"; };
+		CF69CC9A2283004C0058963B /* NetworkRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestProtocol.swift; sourceTree = "<group>"; };
+		CF69CC9D2283161E0058963B /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		CFAF66D8228421FD0061B89F /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		CFAF66DB228436F60061B89F /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		CFAF66DD228437870061B89F /* APIRequestPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestPhotos.swift; sourceTree = "<group>"; };
+		CFAF66E02284CD310061B89F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		CFAF66E32285810F0061B89F /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		CFAF66EA228763900061B89F /* AbstractOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractOperation.swift; sourceTree = "<group>"; };
+		CFAF66EC22881F940061B89F /* NSLock+Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLock+Operations.swift"; sourceTree = "<group>"; };
+		CFAF66EF22882F1D0061B89F /* APPLE_EXAMPLES_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = APPLE_EXAMPLES_LICENSE.txt; sourceTree = "<group>"; };
+		CFAF66F1228833140061B89F /* URLSessionTaskOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionTaskOperation.swift; sourceTree = "<group>"; };
+		CFAF66F322886F060061B89F /* APIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocol.swift; sourceTree = "<group>"; };
+		CFAF66F522887A4B0061B89F /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		CFAF66F8228888050061B89F /* JSONResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponseDecoder.swift; sourceTree = "<group>"; };
+		CFAF66FD22888A950061B89F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		CFAF66FF22888B760061B89F /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		CFAF670122888CCB0061B89F /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		CFAF6703228890C90061B89F /* DataResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResponseDecoder.swift; sourceTree = "<group>"; };
+		CFAF6705228891180061B89F /* ResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecoder.swift; sourceTree = "<group>"; };
+		CFAF67092289C8A00061B89F /* ViewControllersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersProvider.swift; sourceTree = "<group>"; };
+		CFAF670C2289D1690061B89F /* ViewControllersProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersProviding.swift; sourceTree = "<group>"; };
+		CFAF670F2289DF140061B89F /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		CFAF67122289DF610061B89F /* ImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoading.swift; sourceTree = "<group>"; };
+		CFAF67142289E3D70061B89F /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +114,134 @@
 				CF69CC812282E5350058963B /* art.scnassets */,
 				CF69CC832282E5350058963B /* ViewController.swift */,
 				CF69CC852282E5350058963B /* Main.storyboard */,
+				CFAF66E2228580F60061B89F /* Extensions */,
+				CFAF670B2289D1400061B89F /* Providers */,
+				CFAF66DA228436C80061B89F /* View Controllers */,
+				CF69CC9C228314BC0058963B /* Models */,
+				CF69CC972282FF530058963B /* Networking */,
+				CFAF66E9228763570061B89F /* Operations */,
+				CFAF66EE22882F060061B89F /* Licences */,
 				CF69CC882282E5360058963B /* Assets.xcassets */,
 				CF69CC8A2282E5360058963B /* LaunchScreen.storyboard */,
 				CF69CC8D2282E5360058963B /* Info.plist */,
 			);
 			path = ARGallary;
+			sourceTree = "<group>";
+		};
+		CF69CC972282FF530058963B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CF69CC9A2283004C0058963B /* NetworkRequestProtocol.swift */,
+				CFAF66FF22888B760061B89F /* Networking.swift */,
+				CFAF66F322886F060061B89F /* APIProtocol.swift */,
+				CFAF66FD22888A950061B89F /* NetworkError.swift */,
+				CF69CC952282EB050058963B /* NetworkClient.swift */,
+				CFAF66DF2284378D0061B89F /* Requests */,
+				CFAF66F7228887F00061B89F /* ResponseDecoders */,
+				CFAF67112289DF200061B89F /* Tools */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CF69CC9C228314BC0058963B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF69CC9D2283161E0058963B /* Album.swift */,
+				CFAF66DB228436F60061B89F /* Photo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CFAF66DA228436C80061B89F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF69CC932282E9FF0058963B /* AlbumsViewController.swift */,
+				CFAF6716228B27780061B89F /* Photos View Controller */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CFAF66DF2284378D0061B89F /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				CFAF670122888CCB0061B89F /* DataRequest.swift */,
+				CFAF66FA2288888E0061B89F /* API */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		CFAF66E2228580F60061B89F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CFAF66E32285810F0061B89F /* Collection+Extensions.swift */,
+				CFAF66EC22881F940061B89F /* NSLock+Operations.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CFAF66E9228763570061B89F /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				CFAF66EA228763900061B89F /* AbstractOperation.swift */,
+				CFAF66F1228833140061B89F /* URLSessionTaskOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		CFAF66EE22882F060061B89F /* Licences */ = {
+			isa = PBXGroup;
+			children = (
+				CFAF66EF22882F1D0061B89F /* APPLE_EXAMPLES_LICENSE.txt */,
+			);
+			path = Licences;
+			sourceTree = "<group>";
+		};
+		CFAF66F7228887F00061B89F /* ResponseDecoders */ = {
+			isa = PBXGroup;
+			children = (
+				CFAF6705228891180061B89F /* ResponseDecoder.swift */,
+				CFAF66F8228888050061B89F /* JSONResponseDecoder.swift */,
+				CFAF6703228890C90061B89F /* DataResponseDecoder.swift */,
+			);
+			path = ResponseDecoders;
+			sourceTree = "<group>";
+		};
+		CFAF66FA2288888E0061B89F /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CFAF66F522887A4B0061B89F /* APIRequest.swift */,
+				CF69CC982282FFE90058963B /* APIRequestAlbums.swift */,
+				CFAF66DD228437870061B89F /* APIRequestPhotos.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CFAF670B2289D1400061B89F /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				CFAF670C2289D1690061B89F /* ViewControllersProviding.swift */,
+				CFAF67092289C8A00061B89F /* ViewControllersProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		CFAF67112289DF200061B89F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				CFAF67122289DF610061B89F /* ImageLoading.swift */,
+				CFAF670F2289DF140061B89F /* ImageLoader.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		CFAF6716228B27780061B89F /* Photos View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CFAF66D8228421FD0061B89F /* PhotosViewController.swift */,
+				CFAF66E02284CD310061B89F /* PhotoCollectionViewCell.swift */,
+				CFAF67142289E3D70061B89F /* PhotoCollectionViewCell.xib */,
+			);
+			path = "Photos View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +305,8 @@
 				CF69CC822282E5350058963B /* art.scnassets in Resources */,
 				CF69CC8C2282E5360058963B /* LaunchScreen.storyboard in Resources */,
 				CF69CC892282E5360058963B /* Assets.xcassets in Resources */,
+				CFAF67152289E3D70061B89F /* PhotoCollectionViewCell.xib in Resources */,
+				CFAF66F022882F1D0061B89F /* APPLE_EXAMPLES_LICENSE.txt in Resources */,
 				CF69CC872282E5350058963B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,8 +318,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFAF66ED22881F940061B89F /* NSLock+Operations.swift in Sources */,
+				CFAF670222888CCB0061B89F /* DataRequest.swift in Sources */,
 				CF69CC842282E5350058963B /* ViewController.swift in Sources */,
+				CFAF66EB228763900061B89F /* AbstractOperation.swift in Sources */,
+				CFAF66E42285810F0061B89F /* Collection+Extensions.swift in Sources */,
+				CFAF66D9228421FD0061B89F /* PhotosViewController.swift in Sources */,
+				CFAF6704228890C90061B89F /* DataResponseDecoder.swift in Sources */,
+				CF69CC992282FFE90058963B /* APIRequestAlbums.swift in Sources */,
+				CFAF670022888B760061B89F /* Networking.swift in Sources */,
+				CFAF66DC228436F60061B89F /* Photo.swift in Sources */,
+				CFAF66F9228888050061B89F /* JSONResponseDecoder.swift in Sources */,
+				CFAF66F2228833140061B89F /* URLSessionTaskOperation.swift in Sources */,
+				CFAF67102289DF140061B89F /* ImageLoader.swift in Sources */,
+				CFAF66F422886F060061B89F /* APIProtocol.swift in Sources */,
+				CFAF670A2289C8A00061B89F /* ViewControllersProvider.swift in Sources */,
+				CFAF67132289DF610061B89F /* ImageLoading.swift in Sources */,
+				CFAF6706228891180061B89F /* ResponseDecoder.swift in Sources */,
 				CF69CC802282E5350058963B /* AppDelegate.swift in Sources */,
+				CFAF670D2289D1690061B89F /* ViewControllersProviding.swift in Sources */,
+				CF69CC942282E9FF0058963B /* AlbumsViewController.swift in Sources */,
+				CFAF66DE228437870061B89F /* APIRequestPhotos.swift in Sources */,
+				CF69CC962282EB050058963B /* NetworkClient.swift in Sources */,
+				CF69CC9E2283161E0058963B /* Album.swift in Sources */,
+				CFAF66F622887A4B0061B89F /* APIRequest.swift in Sources */,
+				CFAF66FE22888A950061B89F /* NetworkError.swift in Sources */,
+				CFAF66E12284CD310061B89F /* PhotoCollectionViewCell.swift in Sources */,
+				CF69CC9B2283004C0058963B /* NetworkRequestProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,19 @@
+# default Source Tree #
+#######################
+*~
+
+# OS generated files #
+######################
+.DS_Store
+.svn
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Xcode files #
+###############
+WorkspaceSettings.xcsettings
+UserInterfaceState.xcuserstate
+*.xcodeproj/xcuserdata
+*.xccheckout
+*.xcscmblueprint
