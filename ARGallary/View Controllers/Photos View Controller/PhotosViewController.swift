@@ -21,6 +21,7 @@ class PhotosViewController: UICollectionViewController {
         didSet {
             guard let album = self.album else { return }
             
+            self.title = album.title
             networkClient.photos(in: album) { result in
                 do {
                     self.photos = try result.get()
@@ -70,11 +71,11 @@ class PhotosViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        navigationItem.backBarButtonItem?.title = "Album"
+        
         collectionView.backgroundColor = UIColor.white
         collectionView.register(UINib(nibName: String(describing: PhotoCollectionViewCell.self), bundle: nil),
                                 forCellWithReuseIdentifier: Constant.photoCellID)
+        registerForPreviewing(with: self, sourceView: collectionView)
     }
     
     private func itemsSize(for size: CGSize, columnsCount: Int = 4) -> CGSize {
@@ -83,6 +84,10 @@ class PhotosViewController: UICollectionViewController {
         let count = CGFloat(columnsCount)
         let side = (size.width - flowLayout.minimumInteritemSpacing * (count-1)) / count
         return CGSize(width: side, height: side)
+    }
+    
+    private func viewControllerPresentingDetailPhoto(at index: Int) -> UIViewController {
+        return viewControllersProvider.viewControllerPresentingDetail(photos: loadedPhotos, selectedIndex: index)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -121,7 +126,23 @@ extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController = viewControllersProvider.viewControllerPresentingDetail(photos: loadedPhotos, selectedIndex: indexPath.row)
+        let viewController = viewControllerPresentingDetailPhoto(at: indexPath.row)
         show(viewController, sender: nil)
+    }
+}
+
+extension PhotosViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = collectionView.indexPathForItem(at: location),
+            let cell = collectionView.cellForItem(at: indexPath) else {
+                return nil
+        }
+        previewingContext.sourceRect = cell.frame
+        
+        return viewControllerPresentingDetailPhoto(at: indexPath.row)
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: nil)
     }
 }

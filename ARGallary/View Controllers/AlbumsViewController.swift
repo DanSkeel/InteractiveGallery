@@ -45,6 +45,7 @@ class AlbumsViewController: UITableViewController {
         
         self.title = "Albums"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.albumCellID)
+        registerForPreviewing(with: self, sourceView: tableView)
         
         networkClient.albums() { result in
             do {
@@ -53,6 +54,13 @@ class AlbumsViewController: UITableViewController {
                 print("Failed to load albums: \(error)")
             }
         }
+    }
+    
+    func viewControllerPresentingAlbum(at index: Int) -> UIViewController {
+        guard let album = loadedAlbums[safe: index] else {
+            preconditionFailure()
+        }
+        return viewControllersProvider.viewControllerPresenting(album: album)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,13 +78,24 @@ class AlbumsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let selectedRow = tableView.indexPathForSelectedRow?.row,
-            let album = loadedAlbums[safe: selectedRow] else {
-                assertionFailure()
-                return
-        }
-        let viewController = viewControllersProvider.viewControllerPresenting(album: album)
-        viewController.title = album.title
+        let viewController = viewControllerPresentingAlbum(at: indexPath.row)
         self.show(viewController, sender: nil)
+    }
+}
+
+extension AlbumsViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location),
+            let cell = tableView.cellForRow(at: indexPath) else {
+                return nil
+        }
+
+        previewingContext.sourceRect = cell.frame
+    
+        return viewControllerPresentingAlbum(at: indexPath.row)
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: nil)
     }
 }
