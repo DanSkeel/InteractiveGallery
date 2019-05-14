@@ -40,6 +40,10 @@
 		CFAF67102289DF140061B89F /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF670F2289DF140061B89F /* ImageLoader.swift */; };
 		CFAF67132289DF610061B89F /* ImageLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF67122289DF610061B89F /* ImageLoading.swift */; };
 		CFAF67152289E3D70061B89F /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFAF67142289E3D70061B89F /* PhotoCollectionViewCell.xib */; };
+		CFAF6719228B27E20061B89F /* DetailPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF6718228B27E20061B89F /* DetailPhotosViewController.swift */; };
+		CFAF671B228B2B130061B89F /* DetailPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF671A228B2B130061B89F /* DetailPhotoView.swift */; };
+		CFAF671D228B2B630061B89F /* DetailPhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFAF671C228B2B630061B89F /* DetailPhotoView.xib */; };
+		CFAF671F228B62210061B89F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAF671E228B62210061B89F /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +82,10 @@
 		CFAF670F2289DF140061B89F /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		CFAF67122289DF610061B89F /* ImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoading.swift; sourceTree = "<group>"; };
 		CFAF67142289E3D70061B89F /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		CFAF6718228B27E20061B89F /* DetailPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotosViewController.swift; sourceTree = "<group>"; };
+		CFAF671A228B2B130061B89F /* DetailPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoView.swift; sourceTree = "<group>"; };
+		CFAF671C228B2B630061B89F /* DetailPhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPhotoView.xib; sourceTree = "<group>"; };
+		CFAF671E228B62210061B89F /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +165,7 @@
 			children = (
 				CF69CC932282E9FF0058963B /* AlbumsViewController.swift */,
 				CFAF6716228B27780061B89F /* Photos View Controller */,
+				CFAF6717228B27CC0061B89F /* Detail Photos View Controller */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -175,6 +184,7 @@
 			children = (
 				CFAF66E32285810F0061B89F /* Collection+Extensions.swift */,
 				CFAF66EC22881F940061B89F /* NSLock+Operations.swift */,
+				CFAF671E228B62210061B89F /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,6 +254,16 @@
 			path = "Photos View Controller";
 			sourceTree = "<group>";
 		};
+		CFAF6717228B27CC0061B89F /* Detail Photos View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CFAF6718228B27E20061B89F /* DetailPhotosViewController.swift */,
+				CFAF671A228B2B130061B89F /* DetailPhotoView.swift */,
+				CFAF671C228B2B630061B89F /* DetailPhotoView.xib */,
+			);
+			path = "Detail Photos View Controller";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +324,7 @@
 			files = (
 				CF69CC822282E5350058963B /* art.scnassets in Resources */,
 				CF69CC8C2282E5360058963B /* LaunchScreen.storyboard in Resources */,
+				CFAF671D228B2B630061B89F /* DetailPhotoView.xib in Resources */,
 				CF69CC892282E5360058963B /* Assets.xcassets in Resources */,
 				CFAF67152289E3D70061B89F /* PhotoCollectionViewCell.xib in Resources */,
 				CFAF66F022882F1D0061B89F /* APPLE_EXAMPLES_LICENSE.txt in Resources */,
@@ -330,6 +351,7 @@
 				CFAF66DC228436F60061B89F /* Photo.swift in Sources */,
 				CFAF66F9228888050061B89F /* JSONResponseDecoder.swift in Sources */,
 				CFAF66F2228833140061B89F /* URLSessionTaskOperation.swift in Sources */,
+				CFAF671F228B62210061B89F /* UIView+Extensions.swift in Sources */,
 				CFAF67102289DF140061B89F /* ImageLoader.swift in Sources */,
 				CFAF66F422886F060061B89F /* APIProtocol.swift in Sources */,
 				CFAF670A2289C8A00061B89F /* ViewControllersProvider.swift in Sources */,
@@ -343,8 +365,10 @@
 				CF69CC9E2283161E0058963B /* Album.swift in Sources */,
 				CFAF66F622887A4B0061B89F /* APIRequest.swift in Sources */,
 				CFAF66FE22888A950061B89F /* NetworkError.swift in Sources */,
+				CFAF6719228B27E20061B89F /* DetailPhotosViewController.swift in Sources */,
 				CFAF66E12284CD310061B89F /* PhotoCollectionViewCell.swift in Sources */,
 				CF69CC9B2283004C0058963B /* NetworkRequestProtocol.swift in Sources */,
+				CFAF671B228B2B130061B89F /* DetailPhotoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

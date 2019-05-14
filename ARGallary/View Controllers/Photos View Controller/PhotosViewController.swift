@@ -15,6 +15,7 @@ class PhotosViewController: UICollectionViewController {
     
     let networkClient: APIProtocol
     let imageLoader: ImageLoading
+    let viewControllersProvider: ViewControllersProviding
     
     var album: Album? {
         didSet {
@@ -36,6 +37,13 @@ class PhotosViewController: UICollectionViewController {
         }
     }
     
+    private var loadedPhotos: [Photo] {
+        guard let photos = photos else {
+            preconditionFailure("We assume that photos should already be loaded when we use this property")
+        }
+        return photos
+    }
+    
     private let flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 2
@@ -46,10 +54,12 @@ class PhotosViewController: UICollectionViewController {
     }()
     
     init(apiClient: Networking & APIProtocol,
-         imageLoader: ImageLoading) {
+         imageLoader: ImageLoading,
+         viewControllersProvider: ViewControllersProviding) {
         
         self.networkClient = apiClient
         self.imageLoader = imageLoader
+        self.viewControllersProvider = viewControllersProvider
         
         super.init(collectionViewLayout: flowLayout)
     }
@@ -61,8 +71,9 @@ class PhotosViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        navigationItem.backBarButtonItem?.title = "Album"
         collectionView.backgroundColor = UIColor.white
-        collectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil),
+        collectionView.register(UINib(nibName: String(describing: PhotoCollectionViewCell.self), bundle: nil),
                                 forCellWithReuseIdentifier: Constant.photoCellID)
     }
     
@@ -79,7 +90,7 @@ class PhotosViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let photo = photos?[indexPath.row] else {
+        guard let photo = loadedPhotos[safe: indexPath.row] else {
             preconditionFailure("Tried to present missing photo at indexpath: \(indexPath)")
         }
         
@@ -107,5 +118,10 @@ class PhotosViewController: UICollectionViewController {
 extension PhotosViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return itemsSize(for: collectionView.safeAreaLayoutGuide.layoutFrame.size)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController = viewControllersProvider.viewControllerPresentingDetail(photos: loadedPhotos, selectedIndex: indexPath.row)
+        show(viewController, sender: nil)
     }
 }

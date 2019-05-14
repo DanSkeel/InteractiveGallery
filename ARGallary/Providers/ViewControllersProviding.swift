@@ -13,4 +13,6 @@ protocol ViewControllersProviding: AnyObject {
     func viewControllerPresentingAlbums() -> UIViewController
     
     func viewControllerPresenting(album: Album) -> UIViewController
+    
+    func viewControllerPresentingDetail(photos: [Photo], selectedIndex: Int) -> UIViewController
 }
