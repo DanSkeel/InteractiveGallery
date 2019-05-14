@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+/// View that shows detailed photo with title
 class DetailPhotoView: UIView {
     
     var image: UIImage? {

@@ -9,6 +9,9 @@
 import Foundation
 
 extension Collection {
+    /// Save subscript that doesn't crash the app in case of out of bound index.
+    ///
+    /// - Parameter index: Index of element that we want to get from collecion.
     subscript(safe index: Index) -> Element? {
         if indices.contains(index) {
             return self[index]

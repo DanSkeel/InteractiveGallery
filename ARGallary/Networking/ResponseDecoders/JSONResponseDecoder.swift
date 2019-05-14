@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// JSON decoder wrapper
 class JSONResponseDecoder<T: Decodable>: ResponseDecoder<T> {
     override func decode(from data: Data) throws -> T {
         return try JSONDecoder().decode(T.self, from: data)

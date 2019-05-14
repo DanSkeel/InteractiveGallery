@@ -8,7 +8,8 @@
 
 import Foundation
 
-class APIRequestAlbums: APIRequest<[Album]> {    
+/// Albums API request model
+class APIRequestAlbums: APIRequest<[Album]> {
     init(userId: Int) {
         super.init(path: "/albums",
                    parameters: ["userId": String(userId)])        

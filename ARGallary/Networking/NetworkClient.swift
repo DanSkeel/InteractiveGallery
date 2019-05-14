@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Client that works with network
 class NetworkClient: Networking {
     var userId: Int?
     

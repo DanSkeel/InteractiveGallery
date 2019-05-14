@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Simple data request model
 class DataRequest: NetworkRequestProtocol {
     typealias ResultValue = Data
     

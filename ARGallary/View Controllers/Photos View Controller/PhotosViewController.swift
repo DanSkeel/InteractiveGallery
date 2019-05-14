@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View controller that shows photos in the album
 class PhotosViewController: UICollectionViewController {
     private struct Constant {
         static let photoCellID = "PhotoCellID"

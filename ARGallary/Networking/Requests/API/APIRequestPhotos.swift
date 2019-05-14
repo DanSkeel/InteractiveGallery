@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Photos API request model
 class APIRequestPhotos: APIRequest<[Photo]> {
     init(albumId: Int) {
         super.init(path: "/photos",

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Abstract class for API request models.
 class APIRequest<T: Decodable>: NetworkRequestProtocol {
     typealias ResultValue = T
     

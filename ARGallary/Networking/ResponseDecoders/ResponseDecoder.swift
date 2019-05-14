@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Abstract generic deserializer
 class ResponseDecoder<T: Decodable> {
     func decode(from data: Data) throws -> T {
         preconditionFailure("Subclass should override")

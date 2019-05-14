@@ -9,6 +9,9 @@
 import UIKit
 
 extension UIView {
+    /// Loads `view` of type `T` from xib.
+    ///
+    /// - Returns: View.
     class func fromNib<T: UIView>() -> T {
         return Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)!.first as! T
     }

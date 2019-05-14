@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View controller that shows detail photo from a collection of photos. Has a potential for pagination.
 class DetailPhotosViewController: UIViewController {
     
     private let photos: [Photo]

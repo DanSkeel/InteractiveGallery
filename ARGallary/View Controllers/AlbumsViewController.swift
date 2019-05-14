@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View controller that shows albums of the user
 class AlbumsViewController: UITableViewController {
     private struct Constant {
         static let albumCellID = "AlbumCellID"
