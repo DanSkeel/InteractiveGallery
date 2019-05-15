@@ -28,6 +28,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        self.imageView.image = nil;
+        self.imageView.image = nil
     }
 }
