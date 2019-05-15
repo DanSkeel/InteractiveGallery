@@ -20,15 +20,10 @@ class PhotosViewController: UICollectionViewController {
     
     var album: Album? {
         didSet {
-            guard let album = self.album else { return }
+            self.title = album?.title
             
-            self.title = album.title
-            networkClient.photos(in: album) { result in
-                do {
-                    self.photos = try result.get()
-                } catch {
-                    print("Failed to load photos: \(error)")
-                }
+            if let album = self.album {
+                downloadPhotos(in: album)
             }
         }
     }
@@ -77,6 +72,16 @@ class PhotosViewController: UICollectionViewController {
         collectionView.register(UINib(nibName: String(describing: PhotoCollectionViewCell.self), bundle: nil),
                                 forCellWithReuseIdentifier: Constant.photoCellID)
         registerForPreviewing(with: self, sourceView: collectionView)
+    }
+    
+    private func downloadPhotos(in album: Album) {
+        networkClient.photos(in: album) { result in
+            do {
+                self.photos = try result.get()
+            } catch {
+                print("Failed to load photos: \(error)")
+            }
+        }
     }
     
     private func itemsSize(for size: CGSize, columnsCount: Int = 4) -> CGSize {
