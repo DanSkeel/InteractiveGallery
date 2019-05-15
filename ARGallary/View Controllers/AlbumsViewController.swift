@@ -44,20 +44,54 @@ class AlbumsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Albums"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.albumCellID)
         registerForPreviewing(with: self, sourceView: tableView)
         
-        networkClient.albums() { result in
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControllDidChangeValue), for: .valueChanged)
+        self.refreshControl = refreshControl
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if isMovingToParent {
+            downloadAlbums()
+        }
+    }
+    
+    private func downloadAlbums() {
+        if refreshControl?.isRefreshing == false {
+            refreshControl?.beginRefreshing()
+            setupTitle()
+        }
+        
+        networkClient.albums() { [weak self] result in
+            guard let self = self else { return }
+            
             do {
                 self.albums = try result.get()
             } catch {
                 print("Failed to load albums: \(error)")
             }
+            
+            self.refreshControl?.endRefreshing()
+            self.setupTitle()
         }
     }
     
-    func viewControllerPresentingAlbum(at index: Int) -> UIViewController {
+    private func setupTitle() {
+        self.title = (albums != nil || refreshControl?.isRefreshing == true) ? "Albums" : "Pull to get albums"
+    }
+    
+    @objc private func refreshControllDidChangeValue() {
+        if refreshControl?.isRefreshing == true {
+            downloadAlbums()
+        }
+    }
+    
+    private func viewControllerPresentingAlbum(at index: Int) -> UIViewController {
         guard let album = loadedAlbums[safe: index] else {
             preconditionFailure()
         }
