@@ -11,9 +11,15 @@ import UIKit
 /// View controller that shows detail photo from a collection of photos. Has a potential for pagination.
 class DetailPhotosViewController: UIViewController {
     
-    private let photos: [Photo]
-    private var selectedIndex: Int
-    private let imageLoader: ImageLoading
+    let photos: [Photo]
+    
+    var selectedIndex: Int {
+        didSet {
+            showImage(at: selectedIndex)
+        }
+    }
+        
+    let imageLoader: ImageLoading
     
     private let detailPhotoView: DetailPhotoView = .fromNib()
     
@@ -39,6 +45,10 @@ class DetailPhotosViewController: UIViewController {
         
         navigationItem.largeTitleDisplayMode = .never
         
+        showImage(at: selectedIndex)
+    }
+    
+    private func showImage(at index: Int) {
         let photo = photos[selectedIndex]
         detailPhotoView.title = photo.title
         
