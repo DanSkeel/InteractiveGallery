@@ -17,17 +17,10 @@ class AlbumsViewController: UITableViewController {
     let networkClient: APIProtocol
     let viewControllersProvider: ViewControllersProviding
     
-    var albums: [Album]? {
+    var albums: [Album] = [] {
         didSet {
             tableView.reloadData()
         }
-    }
-    
-    private var loadedAlbums: [Album] {
-        guard let albums = albums else {
-            preconditionFailure("We assume that albums should already be loaded when we use this property")
-        }
-        return albums
     }
     
     init(apiClient: APIProtocol,
@@ -82,7 +75,7 @@ class AlbumsViewController: UITableViewController {
     }
     
     private func setupTitle() {
-        self.title = (albums != nil || refreshControl?.isRefreshing == true) ? "Albums" : "Pull to get albums"
+        self.title = (albums.count != 0 || refreshControl?.isRefreshing == true) ? "Albums" : "Pull to get albums"
     }
     
     @objc private func refreshControllDidChangeValue() {
@@ -92,18 +85,18 @@ class AlbumsViewController: UITableViewController {
     }
     
     private func viewControllerPresentingAlbum(at index: Int) -> UIViewController {
-        guard let album = loadedAlbums[safe: index] else {
+        guard let album = albums[safe: index] else {
             preconditionFailure()
         }
         return viewControllersProvider.viewControllerPresenting(album: album)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.albums?.count ?? 0
+        return self.albums.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let album = loadedAlbums[safe: indexPath.row] else {
+        guard let album = albums[safe: indexPath.row] else {
             preconditionFailure("Tried to present missing album at indexpath: \(indexPath)")
         }
         

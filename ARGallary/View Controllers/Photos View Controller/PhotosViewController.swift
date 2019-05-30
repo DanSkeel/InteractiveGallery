@@ -28,17 +28,10 @@ class PhotosViewController: UICollectionViewController {
         }
     }
     
-    private var photos: [Photo]? {
+    private var photos: [Photo] = [] {
         didSet {
             collectionView.reloadData()
         }
-    }
-    
-    private var loadedPhotos: [Photo] {
-        guard let photos = photos else {
-            preconditionFailure("We assume that photos should already be loaded when we use this property")
-        }
-        return photos
     }
     
     private let flowLayout: UICollectionViewFlowLayout = {
@@ -93,15 +86,15 @@ class PhotosViewController: UICollectionViewController {
     }
     
     private func viewControllerPresentingDetailPhoto(at index: Int) -> UIViewController {
-        return viewControllersProvider.viewControllerPresentingDetail(photos: loadedPhotos, selectedIndex: index)
+        return viewControllersProvider.viewControllerPresentingDetail(photos: photos, selectedIndex: index)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.photos?.count ?? 0
+        return self.photos.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let photo = loadedPhotos[safe: indexPath.row] else {
+        guard let photo = photos[safe: indexPath.row] else {
             preconditionFailure("Tried to present missing photo at indexpath: \(indexPath)")
         }
         
